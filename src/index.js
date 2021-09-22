@@ -1,15 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux'
+import { BrowserRouter } from "react-router-dom"
+import RootContainer from './App';
 import reportWebVitals from './reportWebVitals';
+import configureStore from './store'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import "react-toastify/dist/ReactToastify.css";
+import './index.css';
+
+const store = configureStore()
+
+export class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <RootContainer />
+        </BrowserRouter>
+      </Provider>
+    )
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
