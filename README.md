@@ -4,7 +4,11 @@ A shopping cart application created using React.
 
 ## To start the application
 
-In the project directory, you can run:
+In the project directory run:
+
+### `yarn install`
+
+Then in the project directory run:
 
 ### `yarn start`
 

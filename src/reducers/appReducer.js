@@ -12,13 +12,15 @@
 
 import {
   SENDING_REQUEST,
-  SET_PRODUCTS
+  SET_PRODUCTS,
+  SET_PRODUCT_IN_CART
 } from '../constants/constants'
 
 // The initial application state
 const initialState = {
   loading: false,
-  products: []
+  products: [],
+  cart: []
 }
 
 const appReducer = (state = initialState, action) => {
@@ -33,6 +35,12 @@ const appReducer = (state = initialState, action) => {
       return {
         ...state,
         products: action.products
+      }
+
+    case SET_PRODUCT_IN_CART:
+      return {
+        ...state,
+        cart: [...state.cart, action.product]
       }
 
     default:

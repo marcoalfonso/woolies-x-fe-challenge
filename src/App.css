@@ -1,10 +1,18 @@
-.App-header {
+.header {
   background-color: #125430;
   min-height: 64px;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.counter {
+  margin-right: 24px;
+}
+
+.cartAvatar {
+  background: green;
 }
